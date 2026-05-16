@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <script>
+        function createStudent(){
+            let students={
+                name: prompt("Enter a student name:"),
+                grade: parseInt(Prompt("Enter a student grade:")),
+                subject:prompt("Enter a subjects separated by commas").split(',').map(subject=>subject.trim()),
+                passed:function(){
+                    return this.grade>=45;
+                }
+            }
+            return students;
+        }
+        function displayOf(students){
+            for(let key in students){
+                if(typeof students[key]!='function'){
+                    console.log(`${key}:${students[key]}`);
+            }
+        }
+    }
+        console.log("Passed:"+students.passed()?"yes":"no");
+        console.log("-------");
+        let numOfStudent=parseInt(prompt("Enter a number of student details would like u enter:"));
+        for(let i=0;i<numOfStudent;i++){   
+            createStudent();
+            displayOf(students);
+
+        }
+    </script>
+</body>
+</html>
